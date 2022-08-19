@@ -1,0 +1,15 @@
+global using System;
+global using Microsoft.EntityFrameworkCore;
+global using System.Linq;
+global using OfficeOpenXml;
+global using System.Reflection;
+global using System.Collections.Generic;
+global using System.Data;
+global using System.Drawing;
+global using System.Globalization;
+global using OfficeOpenXml.Attributes;
+global using Serilog;
+global using Serilog.Core;
+global using Serilog.Events;
+global using OfficeOpenXml.Style;
+global using System.Linq.Expressions;

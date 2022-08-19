@@ -1,0 +1,12 @@
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\bin\Debug\net6.0\ExcelEFCore.deps.json
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\bin\Debug\net6.0\ExcelEFCore.dll
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\bin\Debug\net6.0\ExcelEFCore.pdb
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.csproj.AssemblyReference.cache
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.GeneratedMSBuildEditorConfig.editorconfig
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.AssemblyInfoInputs.cache
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.AssemblyInfo.cs
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.csproj.CoreCompileInputs.cache
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.dll
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\refint\ExcelEFCore.dll
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ExcelEFCore.pdb
+\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\obj\Debug\net6.0\ref\ExcelEFCore.dll

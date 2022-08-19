@@ -1,0 +1,206 @@
+2022-08-17 23:13:34.835 -03:00 [INF] ExcelEFCore.Excel InitAligments
+2022-08-17 23:13:34.846 -03:00 [INF] ExcelEFCore.Worksheet:.ctor DbSet=Persons Worksheet=Persons
+2022-08-17 23:13:34.847 -03:00 [INF] ExcelEFCore.Worksheet ValidateHeaders
+2022-08-17 23:13:34.847 -03:00 [INF] ExcelEFCore.Worksheet GetHeaders
+2022-08-17 23:13:34.887 -03:00 [ERR] ExcelEFCore.Excel Save Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+System.InvalidOperationException: Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.Exception: Error overwriting file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.IO.IOException: The process cannot access the file '\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx' because it is being used by another process.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at ExcelEFCore.Excel.Save() in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Excel_Initialization.cs:line 67
+2022-08-17 23:13:34.895 -03:00 [INF] ExcelEFCore.Worksheet:.ctor DbSet=Books Worksheet=Books
+2022-08-17 23:13:34.896 -03:00 [INF] ExcelEFCore.Worksheet ValidateHeaders
+2022-08-17 23:13:34.896 -03:00 [INF] ExcelEFCore.Worksheet GetHeaders
+2022-08-17 23:13:34.914 -03:00 [ERR] ExcelEFCore.Excel Save Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+System.InvalidOperationException: Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.Exception: Error overwriting file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.IO.IOException: The process cannot access the file '\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx' because it is being used by another process.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at ExcelEFCore.Excel.Save() in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Excel_Initialization.cs:line 67
+2022-08-17 23:13:34.915 -03:00 [INF] .ctor: Initialized ExcelToolEFIntegration version 1.0.0
+2022-08-17 23:13:34.931 -03:00 [ERR] ExcelEFCore.Excel Save Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+System.InvalidOperationException: Error saving file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.Exception: Error overwriting file \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx
+ ---> System.IO.IOException: The process cannot access the file '\\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\Tests\ExcelToolTests\bin\Debug\net6.0\test1.xlsx' because it is being used by another process.
+   at System.IO.FileSystem.DeleteFile(String fullPath)
+   at System.IO.File.Delete(String path)
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   --- End of inner exception stack trace ---
+   at OfficeOpenXml.ExcelPackage.Save()
+   at ExcelEFCore.Excel.Save() in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Excel_Initialization.cs:line 67
+2022-08-17 23:13:34.933 -03:00 [INF] ExcelEFCore.Excel ProcessColoredWorksheetToContext
+2022-08-17 23:13:34.933 -03:00 [INF] ExcelEFCore.Excel ProcessColoredWorksheetToContext Importing worksheet to context Persons
+2022-08-17 23:13:34.934 -03:00 [INF] ExcelEFCore.Worksheet:ExportColoredToContext
+2022-08-17 23:13:34.944 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=4
+2022-08-17 23:13:34.945 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=null
+2022-08-17 23:13:34.961 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Id of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Id of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:34.962 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Camilo Chaves
+2022-08-17 23:13:34.962 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=chaves.camilo@gmail.com
+2022-08-17 23:13:34.963 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:13:34.976 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:34.976 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=null
+2022-08-17 23:13:34.990 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:34.991 -03:00 [INF] ExcelEFCore.ContextHandler AddElements
+2022-08-17 23:13:34.991 -03:00 [INF] ExcelEFCore.ContextHandler GetElements dbSet=Persons
+2022-08-17 23:13:34.997 -03:00 [INF] ExcelEFCore.Worksheet Find
+2022-08-17 23:13:34.998 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=2
+2022-08-17 23:13:34.998 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=1
+2022-08-17 23:13:34.999 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Darth Vader
+2022-08-17 23:13:34.999 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:13:34.999 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:13:35.014 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.015 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=3499999
+2022-08-17 23:13:35.015 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.016 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.016 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=3
+2022-08-17 23:13:35.016 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=2
+2022-08-17 23:13:35.017 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Luke SkyWalker
+2022-08-17 23:13:35.017 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:13:35.017 -03:00 [INF] ExcelEFCore.Element:SetValue property Date="2022-08-15T00:00:00.0000000"
+2022-08-17 23:13:35.018 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=null
+2022-08-17 23:13:35.031 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.032 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.032 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.032 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=4
+2022-08-17 23:13:35.033 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=null
+2022-08-17 23:13:35.046 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Id of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Id of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.047 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Camilo Chaves
+2022-08-17 23:13:35.047 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=chaves.camilo@gmail.com
+2022-08-17 23:13:35.048 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:13:35.061 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.061 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=null
+2022-08-17 23:13:35.075 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.076 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.076 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.076 -03:00 [INF] ExcelEFCore.Worksheet:WriteToRow row=4 {"Id":3,"Name":"Camilo Chaves","Email":"chaves.camilo@gmail.com","Date":null,"Phone":null,"$type":"Person"}
+2022-08-17 23:13:35.077 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:13:35.077 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:13:35.077 -03:00 [INF] ExcelEFCore.Element:GetValue of Email
+2022-08-17 23:13:35.078 -03:00 [INF] ExcelEFCore.Element:GetValue of Date
+2022-08-17 23:13:35.078 -03:00 [INF] ExcelEFCore.Element:GetValue of Phone
+2022-08-17 23:13:35.083 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=2
+2022-08-17 23:13:35.083 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=1
+2022-08-17 23:13:35.083 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Darth Vader
+2022-08-17 23:13:35.084 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:13:35.084 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:13:35.098 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:35.098 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=3499999
+2022-08-17 23:13:35.099 -03:00 [INF] ExcelEFCore.ContextHandler UpdateElements
+2022-08-17 23:13:35.100 -03:00 [INF] ExcelEFCore.ContextHandler GetElements dbSet=Persons
+2022-08-17 23:13:35.100 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:35.101 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:35.102 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:35.103 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:35.103 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:35.103 -03:00 [INF] ExcelEFCore.ContextHandler:GetValue of Id
+2022-08-17 23:13:50.139 -03:00 [INF] ExcelEFCore.Worksheet Find
+2022-08-17 23:13:56.402 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=2
+2022-08-17 23:13:56.403 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=1
+2022-08-17 23:13:56.403 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Darth Vader
+2022-08-17 23:13:56.404 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:13:56.404 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:13:56.418 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:13:56.419 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=3499999
+2022-08-17 23:14:19.394 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:14:19.411 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:16:36.628 -03:00 [INF] ExcelEFCore.Excel InitAligments
+2022-08-17 23:16:36.839 -03:00 [INF] ExcelEFCore.Worksheet:.ctor DbSet=Persons Worksheet=Persons
+2022-08-17 23:16:36.842 -03:00 [INF] ExcelEFCore.Worksheet ValidateHeaders
+2022-08-17 23:16:36.842 -03:00 [INF] ExcelEFCore.Worksheet GetHeaders
+2022-08-17 23:16:37.607 -03:00 [INF] ExcelEFCore.Excel Save
+2022-08-17 23:16:37.607 -03:00 [INF] ExcelEFCore.Worksheet:.ctor DbSet=Books Worksheet=Books
+2022-08-17 23:16:37.608 -03:00 [INF] ExcelEFCore.Worksheet ValidateHeaders
+2022-08-17 23:16:37.608 -03:00 [INF] ExcelEFCore.Worksheet GetHeaders
+2022-08-17 23:16:37.615 -03:00 [INF] ExcelEFCore.Excel Save
+2022-08-17 23:16:37.615 -03:00 [INF] .ctor: Initialized ExcelToolEFIntegration version 1.0.0
+2022-08-17 23:16:37.624 -03:00 [INF] ExcelEFCore.Excel Save
+2022-08-17 23:16:37.719 -03:00 [INF] ExcelEFCore.Excel ExportContextToWorksheet
+2022-08-17 23:16:37.720 -03:00 [INF] ExcelEFCore.Excel ExportContextToWorksheet Exporting context to worksheet Persons
+2022-08-17 23:16:37.721 -03:00 [INF] ExcelEFCore.Worksheet:ImportFromContext
+2022-08-17 23:16:37.722 -03:00 [INF] ExcelEFCore.Worksheet:ClearAll propagateClearToContext:false
+2022-08-17 23:16:37.944 -03:00 [INF] ExcelEFCore.ContextHandler GetElements dbSet=Persons
+2022-08-17 23:16:38.054 -03:00 [INF] ExcelEFCore.Worksheet:WriteToRow row=2 {"Id":1,"Name":"Anakin SkyWalker","Email":"","Date":null,"Phone":null,"$type":"Person"}
+2022-08-17 23:16:38.060 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:16:38.061 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:16:38.062 -03:00 [INF] ExcelEFCore.Element:GetValue of Email
+2022-08-17 23:16:38.062 -03:00 [INF] ExcelEFCore.Element:GetValue of Date
+2022-08-17 23:16:38.063 -03:00 [INF] ExcelEFCore.Element:GetValue of Phone
+2022-08-17 23:16:38.063 -03:00 [INF] ExcelEFCore.Worksheet:WriteToRow row=3 {"Id":2,"Name":"Luke Skywalker","Email":"","Date":null,"Phone":null,"$type":"Person"}
+2022-08-17 23:16:38.064 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:16:38.064 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:16:38.065 -03:00 [INF] ExcelEFCore.Element:GetValue of Email
+2022-08-17 23:16:38.065 -03:00 [INF] ExcelEFCore.Element:GetValue of Date
+2022-08-17 23:16:38.066 -03:00 [INF] ExcelEFCore.Element:GetValue of Phone
+2022-08-17 23:16:38.066 -03:00 [INF] ExcelEFCore.Excel ExportContextToWorksheet Exporting context to worksheet Books
+2022-08-17 23:16:38.066 -03:00 [INF] ExcelEFCore.Worksheet:ImportFromContext
+2022-08-17 23:16:38.066 -03:00 [INF] ExcelEFCore.Worksheet:ClearAll propagateClearToContext:false
+2022-08-17 23:16:38.067 -03:00 [INF] ExcelEFCore.ContextHandler GetElements dbSet=Books
+2022-08-17 23:16:38.071 -03:00 [INF] ExcelEFCore.Worksheet:WriteToRow row=2 {"Id":1,"Name":"1001 Nights","Person":{"Id":1,"Name":"Anakin SkyWalker","Email":"","Date":null,"Phone":null,"$type":"Person"},"PersonFK":1,"$type":"Book"}
+2022-08-17 23:16:38.072 -03:00 [INF] ExcelEFCore.Element:GetValue of Id
+2022-08-17 23:16:38.073 -03:00 [INF] ExcelEFCore.Element:GetValue of Name
+2022-08-17 23:16:38.073 -03:00 [INF] ExcelEFCore.Element:GetValue of PersonFK
+2022-08-17 23:16:38.074 -03:00 [INF] ExcelEFCore.Worksheet GetAll
+2022-08-17 23:16:38.075 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=2
+2022-08-17 23:16:38.076 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=1
+2022-08-17 23:16:38.077 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Anakin SkyWalker
+2022-08-17 23:16:38.077 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:16:38.078 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:16:38.108 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:16:38.135 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=null
+2022-08-17 23:16:38.151 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:16:38.152 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=3
+2022-08-17 23:16:38.153 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=2
+2022-08-17 23:16:38.153 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=Luke Skywalker
+2022-08-17 23:16:38.154 -03:00 [INF] ExcelEFCore.Element:SetValue property Email=
+2022-08-17 23:16:38.154 -03:00 [INF] ExcelEFCore.Element:SetValue property Date=null
+2022-08-17 23:16:38.171 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Date of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:16:38.171 -03:00 [INF] ExcelEFCore.Element:SetValue property Phone=null
+2022-08-17 23:16:38.188 -03:00 [ERR] ExcelEFCore.Element:SetValue Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+System.Exception: Can't set null the non-nullable property Phone of type System.Reflection.RuntimePropertyInfo
+   at ExcelEFCore.Element.SetValue(Object value, PropertyInfo property) in \\wsl$\Ubuntu\home\cchaves\dev\ExcelEFCoreTool\src\ExcelEFCore\Models\Element\Element_Value.cs:line 30
+2022-08-17 23:16:38.189 -03:00 [INF] ExcelEFCore.Worksheet GetAll
+2022-08-17 23:16:38.189 -03:00 [INF] ExcelEFCore.Worksheet:GetElement row=2
+2022-08-17 23:16:38.190 -03:00 [INF] ExcelEFCore.Element:SetValue property Id=1
+2022-08-17 23:16:38.190 -03:00 [INF] ExcelEFCore.Element:SetValue property Name=1001 Nights
+2022-08-17 23:16:38.191 -03:00 [INF] ExcelEFCore.Element:SetValue property PersonFK=1
+2022-08-17 23:16:38.224 -03:00 [INF] Excel Static: Create Test.AppDbContext INF 1

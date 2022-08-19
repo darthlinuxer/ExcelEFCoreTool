@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C90733D-8D60-436C-A629-71A6B196E4DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{262E2FB9-28AE-4FCA-B632-9197BF649FEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelEFCoreTests", "Tests\ExcelToolTests\ExcelEFCoreTests.csproj", "{066BD670-AAC9-4390-A2B9-1D4B8354FA00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelEFCore", "src\ExcelEFCore\ExcelEFCore.csproj", "{9FC36F4B-D6C7-4942-96F9-C63556543FBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{066BD670-AAC9-4390-A2B9-1D4B8354FA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066BD670-AAC9-4390-A2B9-1D4B8354FA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066BD670-AAC9-4390-A2B9-1D4B8354FA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066BD670-AAC9-4390-A2B9-1D4B8354FA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC36F4B-D6C7-4942-96F9-C63556543FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC36F4B-D6C7-4942-96F9-C63556543FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC36F4B-D6C7-4942-96F9-C63556543FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC36F4B-D6C7-4942-96F9-C63556543FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{066BD670-AAC9-4390-A2B9-1D4B8354FA00} = {262E2FB9-28AE-4FCA-B632-9197BF649FEB}
+		{9FC36F4B-D6C7-4942-96F9-C63556543FBA} = {7C90733D-8D60-436C-A629-71A6B196E4DD}
+	EndGlobalSection
+EndGlobal
