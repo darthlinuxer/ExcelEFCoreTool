@@ -16,8 +16,8 @@ public partial class Worksheet
         });
         if (elementsToDelete.Count() > 0)
         {
-            var result = RemoveEvent?.Invoke(elementsToDelete, ContextDbSet, KeyProp) ?? false;
-            if (result) rowsToDelete?.ToList().ForEach(row => ColorRow(row, Color.Black));
+            RemoveEvent?.Invoke(elementsToDelete, ContextDbSet, KeyProp);
+            rowsToDelete?.ToList().ForEach(row => ColorRow(row, Color.Black));
         }
 
         var rowsToAdd = RowsToAdd();
@@ -30,17 +30,14 @@ public partial class Worksheet
         });
         if (elementsToAdd.Count() > 0)
         {
-            var result = AddEvent?.Invoke(elementsToAdd, ContextDbSet) ?? false;
-            if (result)
+            AddEvent?.Invoke(elementsToAdd, ContextDbSet);
+            rowsToAdd?.ToList().ForEach(row =>
             {
-                rowsToAdd?.ToList().ForEach(row =>
-                {
-                    var indexofRow = rowsToAdd?.ToList().IndexOf(row);
-                    var element = elementsToAdd.ElementAt(indexofRow!.Value);
-                    WriteToRow(row, element);
-                    ColorRow(row, UISuccessColor);
-                });
-            }
+                var indexofRow = rowsToAdd?.ToList().IndexOf(row);
+                var element = elementsToAdd.ElementAt(indexofRow!.Value);
+                WriteToRow(row, element);
+                ColorRow(row, UISuccessColor);
+            });
         }
 
         var rowsToUpdate = RowsToUpdate();
@@ -53,17 +50,14 @@ public partial class Worksheet
         });
         if (elementsToUpdate?.Count() > 0)
         {
-            var result = UpdateEvent?.Invoke(elementsToUpdate, ContextDbSet, KeyProp) ?? false;
-            if (result)
+            UpdateEvent?.Invoke(elementsToUpdate, ContextDbSet, KeyProp);
+            rowsToUpdate?.ToList().ForEach(row =>
             {
-                rowsToUpdate?.ToList().ForEach(row =>
-                {
-                    var indexofRow = rowsToUpdate?.ToList().IndexOf(row);
-                    var element = elementsToUpdate.ElementAt(indexofRow!.Value);
-                    WriteToRow(row, element);
-                    ColorRow(row, UISuccessColor);
-                });
-            }
+                var indexofRow = rowsToUpdate?.ToList().IndexOf(row);
+                var element = elementsToUpdate.ElementAt(indexofRow!.Value);
+                WriteToRow(row, element);
+                ColorRow(row, UISuccessColor);
+            });
         }
     }
 
@@ -79,7 +73,7 @@ public partial class Worksheet
                 elements.Add(element);
             }
             ClearAllEvent?.Invoke(ContextDbSet);
-            var elementsAdded = AddEvent?.Invoke(elements, ContextDbSet);
+            AddEvent?.Invoke(elements, ContextDbSet);
         }
         catch (Exception ex)
         {
@@ -98,7 +92,7 @@ public partial class Worksheet
             if (dbSet is null) throw new Exception($"Worksheet {RealWorksheet.Name} have no associated DbSet");
             IEnumerable<object>? contextElements = context.GetElements(dbSet!.Name);
 
-            if(!ValidateHeaders()) { ClearAll(propagateClearToContext: false); CreateHeaders();}
+            if (!ValidateHeaders()) { ClearAll(propagateClearToContext: false); CreateHeaders(); }
 
             if (contextElements is not null)
                 foreach (var contextElement in contextElements)

@@ -68,7 +68,7 @@ public partial class Element
             var targetValue = prop.GetValue(element.Item);
             if (sourceValue is not null && targetValue is null) { result.Add(prop.Name, null); continue; }
             if (sourceValue is not null && targetValue is not null) if (!(sourceValue.Equals(targetValue))) { result.Add(prop.Name, targetValue); continue; }
-            if (sourceValue is null && targetValue is not null) { result.Add(prop.Name, targetValue);  }
+            if (sourceValue is null && targetValue is not null) { result.Add(prop.Name, targetValue); }
         }
         return result;
     }

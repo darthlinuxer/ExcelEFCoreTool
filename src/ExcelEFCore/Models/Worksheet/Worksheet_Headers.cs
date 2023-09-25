@@ -10,10 +10,11 @@ public partial class Worksheet
         return HeaderProperties.Select(c => c.Name).All(c => headers.Contains(c));
     }
 
-    private bool ValidateHeaders(Element element){
+    private bool ValidateHeaders(Element element)
+    {
         Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
-        var elementProperties = element.Properties.Select(c=>c.Name);
-        return HeaderProperties.Select(c=>c.Name).All(c=> elementProperties.Contains(c));
+        var elementProperties = element.Properties.Select(c => c.Name);
+        return HeaderProperties.Select(c => c.Name).All(c => elementProperties.Contains(c));
     }
 
     private IEnumerable<string> InvalidHeaders() => HeaderProperties.Select(c => c.Name).Except(GetHeaders());

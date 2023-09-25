@@ -46,12 +46,12 @@ public partial class Worksheet
         }
     }
 
-    private Dictionary<string, object?> CompareElements(Element source, Element? target, bool compareId=false)
+    private Dictionary<string, object?> CompareElements(Element source, Element? target, bool compareId = false)
     {
         try
         {
             Excel.Info("{$a}:{b} source={@c} target={@d} ", this, MethodBase.GetCurrentMethod()?.Name, source.Item, target?.Item);
-            return source.UnMatchedProperties(target, compareId);            
+            return source.UnMatchedProperties(target, compareId);
         }
         catch (Exception ex)
         {

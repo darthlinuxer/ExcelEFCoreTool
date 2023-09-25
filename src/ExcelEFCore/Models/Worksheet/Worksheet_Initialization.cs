@@ -11,7 +11,7 @@ public partial class Worksheet
     private Type ElementType { get; init; }
     private string KeyName { get; init; }
     private int KeyCol { get; init; }
-    private PropertyInfo KeyProp {get; init;}
+    private PropertyInfo KeyProp { get; init; }
     private IEnumerable<PropertyInfo> HeaderProperties { get; init; }
     internal Color UIUpdateColor { get; set; } = Color.Yellow;
     internal Color UIDeleteColor { get; set; } = Color.Red;
@@ -57,7 +57,7 @@ public partial class Worksheet
             if (!isKeyValid) throw new Exception($"{keyName} is not a valid property of {ElementType.Name}");
             KeyName = keyName;
             KeyCol = HeaderProperties.Select(c => c.Name).ToList().IndexOf(KeyName) + 1;
-            KeyProp = HeaderProperties.Single(c=>c.Name == keyName);
+            KeyProp = HeaderProperties.Single(c => c.Name == keyName);
         }
         catch (Exception ex)
         {

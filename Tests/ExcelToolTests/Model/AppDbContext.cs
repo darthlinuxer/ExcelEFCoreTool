@@ -1,5 +1,5 @@
 namespace Test;
-public class AppDbContext : DbContext, IDisposable
+public class AppDbContext : DbContext, IDisposable, IDbContext
 {
     private string dbName = "";
     public DbSet<Person>? Persons { get; set; }
@@ -10,4 +10,9 @@ public class AppDbContext : DbContext, IDisposable
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseInMemoryDatabase(dbName);
 
     public override void Dispose() { Console.WriteLine("************** Context being disposed ************"); } // base.Dispose(); GC.SuppressFinalize(this); } 
+
+    public void EntryStatus(object entity, EntityState state)
+    {
+        Entry(entity).State = state;
+    }
 }

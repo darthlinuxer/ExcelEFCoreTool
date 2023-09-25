@@ -23,6 +23,6 @@ public class Person
 
     [DataType(DataType.PhoneNumber)]
     public int? Phone { get; set; }
- 
+
 
 }

@@ -56,12 +56,13 @@ public partial class Worksheet
         }
     }
 
-    public void AddRange(IEnumerable<object> items, string index="Id", CultureInfo? culture = null)
+    public void AddRange(IEnumerable<object> items, string index = "Id", CultureInfo? culture = null)
     {
         try
         {
             Excel.Info("{$a}:{b}", this, MethodBase.GetCurrentMethod()?.Name);
-            foreach (var item in items){
+            foreach (var item in items)
+            {
                 var element = Element.Factory(item, index, culture);
                 Add(element);
             }

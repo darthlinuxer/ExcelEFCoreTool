@@ -35,8 +35,8 @@ namespace ExcelEFCore
             try
             {
                 Excel.Debug("static {a}: worksheet={b} row={c} col={d} color={e}", MethodBase.GetCurrentMethod()?.Name, worksheet.Name, row, col, color.ToKnownColor());
-                worksheet.Cells[row,col].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells[row, col].Style.Fill.BackgroundColor.SetColor(color);    
+                worksheet.Cells[row, col].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells[row, col].Style.Fill.BackgroundColor.SetColor(color);
             }
             catch (Exception ex)
             {

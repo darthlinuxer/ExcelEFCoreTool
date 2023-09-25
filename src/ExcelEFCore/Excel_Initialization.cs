@@ -1,18 +1,21 @@
+
 namespace ExcelEFCore;
 
 public partial class Excel : IDisposable
 {
     private ExcelPackage? app;
     private ExcelWorkbook? workBook;
-    private ContextHandler contextHandler;
+    private ContextHandler? _contextHandler;
     private const string toolVersion = "1.0.0";
     private LoggerConfiguration loggerConfiguration = new LoggerConfiguration();
     private static Logger? log;
     private LoggingLevelSwitch levelSwitch = new LoggingLevelSwitch();
     public List<Worksheet> Worksheets { get; set; } = new List<Worksheet>();
 
+    public ContextHandler? ContextHandler { get => _contextHandler; private set { _contextHandler = value; } }
 
-    private Excel(string file, DbContext context, string minimumLevel = "Debug")
+
+    private Excel(string file, ContextHandler contextHandler, string minimumLevel = "Debug")
     {
         LogEventLevel eventLevel = LogEventLevel.Debug;
         if (minimumLevel == "Verbose") eventLevel = LogEventLevel.Verbose;
@@ -38,7 +41,7 @@ public partial class Excel : IDisposable
               .CreateLogger();
 
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-        this.contextHandler = new ContextHandler(context);
+        ContextHandler = contextHandler;
 
         try
         {
@@ -63,7 +66,7 @@ public partial class Excel : IDisposable
     {
         try
         {
-            contextHandler?.Save();
+            _contextHandler?.Save();
             app?.Save();
             Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
         }
@@ -76,29 +79,31 @@ public partial class Excel : IDisposable
     {
         Worksheets.ForEach(c =>
         {
-            if (contextHandler is not null) {
-                c.AddEvent -= contextHandler.AddElements;
-                c.RemoveEvent -= contextHandler.RemoveElements;
-                c.UpdateEvent -= contextHandler.UpdateElements;
-                c.ClearAllEvent -= contextHandler.ClearAll;
+            if (_contextHandler is not null)
+            {
+                c.AddEvent -= _contextHandler.AddElements;
+                c.RemoveEvent -= _contextHandler.RemoveElements;
+                c.UpdateEvent -= _contextHandler.UpdateElements;
+                c.ClearAllEvent -= _contextHandler.ClearAll;
             }
         });
-        this.contextHandler?.Dispose();
+        this._contextHandler?.Dispose();
         this.app?.Dispose();
         GC.Collect();
     }
 
-    public static Excel? Create(string? file, DbContext context, string eventLevel = "Debug", int indexCellColNumber = 1)
+    public static Excel? Create(string? file, IDbContext dbContext, string eventLevel = "Debug", int indexCellColNumber = 1)
     {
         try
         {
-            Excel.Info("Excel Static: {a} {$context} {$eventLevel} {indexCellColNumber}", MethodBase.GetCurrentMethod()?.Name, context, eventLevel, indexCellColNumber);
+            var contextHandler = new ContextHandler(dbContext);
+            Excel.Info("Excel Static: {a} {$context} {$eventLevel} {indexCellColNumber}", MethodBase.GetCurrentMethod()?.Name, dbContext, eventLevel, indexCellColNumber);
             if (file is null || file == "")
             {
                 Excel.Warning("File name: Default.xlsx");
                 file = "Default.xlsx";
             }
-            return new Excel(file, context, eventLevel);
+            return new Excel(file, contextHandler, eventLevel);
         }
         catch (Exception ex)
         {

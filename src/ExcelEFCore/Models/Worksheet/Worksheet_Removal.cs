@@ -15,7 +15,7 @@ public partial class Worksheet
             CreateHeaders();
             if (propagateClearToContext)
             {
-                var result = ClearAllEvent?.Invoke(ContextDbSet);
+                ClearAllEvent?.Invoke(ContextDbSet);
             }
         }
         catch (Exception ex)

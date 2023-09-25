@@ -9,16 +9,16 @@ public partial class Excel
 
             Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
             var excelWorksheets = this.workBook?.Worksheets;
-            foreach (var dbSet in contextHandler.GetAllDbSets())
+            foreach (var dbSet in _contextHandler.GetAllDbSets())
             {
                 var existingExcelWorksheet = excelWorksheets?.ToList().FirstOrDefault(c => c.Name == dbSet.Name);
                 if (existingExcelWorksheet is not null)
                 {
                     var existingWorksheet = Worksheet.Factory(dbSet, existingExcelWorksheet, true, "Id");
-                    existingWorksheet.AddEvent += this.contextHandler.AddElements;
-                    existingWorksheet.RemoveEvent += this.contextHandler.RemoveElements;
-                    existingWorksheet.UpdateEvent += this.contextHandler.UpdateElements;
-                    existingWorksheet.ClearAllEvent += this.contextHandler.ClearAll;
+                    existingWorksheet.AddEvent += this._contextHandler.AddElements;
+                    existingWorksheet.RemoveEvent += this._contextHandler.RemoveElements;
+                    existingWorksheet.UpdateEvent += this._contextHandler.UpdateElements;
+                    existingWorksheet.ClearAllEvent += this._contextHandler.ClearAll;
                     Worksheets.Add(existingWorksheet);
                     Save();
                     continue;
@@ -26,10 +26,10 @@ public partial class Excel
                 var newExcelWorksheet = this.workBook?.Worksheets.Add(dbSet.Name)!;
                 Save();
                 var newWorksheet = Worksheet.Factory(dbSet, newExcelWorksheet, true, "Id");
-                newWorksheet.AddEvent += this.contextHandler.AddElements;
-                newWorksheet.RemoveEvent += this.contextHandler.RemoveElements;
-                newWorksheet.UpdateEvent += this.contextHandler.UpdateElements;
-                newWorksheet.ClearAllEvent += this.contextHandler.ClearAll;
+                newWorksheet.AddEvent += this._contextHandler.AddElements;
+                newWorksheet.RemoveEvent += this._contextHandler.RemoveElements;
+                newWorksheet.UpdateEvent += this._contextHandler.UpdateElements;
+                newWorksheet.ClearAllEvent += this._contextHandler.ClearAll;
                 Worksheets.Add(newWorksheet);
             }
         }
@@ -47,7 +47,7 @@ public partial class Excel
             foreach (var worksheet in Worksheets)
             {
                 Excel.Info("{$a} {b} Exporting context to worksheet {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet.Name);
-                worksheet.ImportFromContext(this.contextHandler, culture);
+                worksheet.ImportFromContext(_contextHandler!, culture);
             }
             Save();
         }
@@ -65,7 +65,7 @@ public partial class Excel
             var worksheet = Worksheets.FirstOrDefault(c => c.Name == name);
             if (worksheet is null) return;
             Excel.Info("{$a} {b} Exporting context to worksheet {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet.Name);
-            worksheet.ImportFromContext(this.contextHandler, culture);
+            worksheet.ImportFromContext(this._contextHandler, culture);
             Save();
         }
         catch (Exception ex)
