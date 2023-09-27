@@ -1,4 +1,8 @@
-namespace Test;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using OfficeOpenXml.Attributes;
+
+namespace Model;
 
 [Table("TblBooks")]
 public class Book

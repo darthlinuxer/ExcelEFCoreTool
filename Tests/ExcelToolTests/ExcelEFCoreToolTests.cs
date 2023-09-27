@@ -1,3 +1,5 @@
+using Model;
+
 namespace Test;
 
 [TestClass]
@@ -16,8 +18,8 @@ public partial class ExcelEFCoreToolTests
     public void SetupTest()
     {
         //In Memory Entity Framework context leaks between tests unless it has a different db Name;
-        var appDbContext = new AppDbContext($"dbName{test}");
-        var apiDbContext = new ApiDbContext();
+        IExcelDbContext appDbContext = new AppDbContext($"dbName{test}");
+        IExcelDbContext apiDbContext = new ApiDbContext();
         excelWithDb = Excel.Create($"test{test}.xlsx", appDbContext, "INF");
         excelWithApi = Excel.Create($"test{test}.xlsx", apiDbContext, "INF");
 

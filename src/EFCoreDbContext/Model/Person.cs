@@ -1,4 +1,7 @@
-namespace Test;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Model;
 
 [Table("TblPerson")]
 public class Person

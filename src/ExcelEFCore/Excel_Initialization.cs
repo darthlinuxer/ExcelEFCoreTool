@@ -92,7 +92,7 @@ public partial class Excel : IDisposable
         GC.Collect();
     }
 
-    public static Excel? Create(string? file, IDbContext dbContext, string eventLevel = "Debug", int indexCellColNumber = 1)
+    public static Excel? Create(string? file, IExcelDbContext dbContext, string eventLevel = "Debug", int indexCellColNumber = 1)
     {
         try
         {

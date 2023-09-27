@@ -13,12 +13,13 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.7" />
-    <PackageReference Include="EPPlus" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.11" />
+    <PackageReference Include="EPPlus" Version="6.2.9" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\ExcelEFCore\ExcelEFCore.csproj" />
+    <ProjectReference Include="..\..\src\EFCoreDbContext\EFCoreDbContext.csproj" />
   </ItemGroup>
 
 </Project>

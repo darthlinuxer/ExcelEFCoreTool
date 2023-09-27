@@ -2,9 +2,9 @@ namespace ExcelEFCore;
 
 public partial class ContextHandler
 {
-    private readonly IDbContext _context;
+    private readonly IExcelDbContext _context;
 
-    public ContextHandler(IDbContext context)
+    public ContextHandler(IExcelDbContext context)
     {
         this._context = context;
     }

@@ -1,5 +1,8 @@
-namespace Test;
-public class AppDbContext : DbContext, IDisposable, IDbContext
+using ExcelEFCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace Model;
+public class AppDbContext : DbContext, IDisposable, IExcelDbContext
 {
     private string dbName = "";
     public DbSet<Person>? Persons { get; set; }
@@ -9,7 +12,10 @@ public class AppDbContext : DbContext, IDisposable, IDbContext
     public AppDbContext(string inMemoryDbName) => dbName = inMemoryDbName;
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseInMemoryDatabase(dbName);
 
-    public override void Dispose() { Console.WriteLine("************** Context being disposed ************"); } // base.Dispose(); GC.SuppressFinalize(this); } 
+    public override void Dispose()
+    {
+        Console.WriteLine("************** Context being disposed ************");
+    }
 
     public void EntryStatus(object entity, EntityState state)
     {

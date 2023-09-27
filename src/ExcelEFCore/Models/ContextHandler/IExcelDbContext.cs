@@ -1,6 +1,6 @@
 namespace ExcelEFCore;
 
-public interface IDbContext
+public interface IExcelDbContext
 {
     void EntryStatus(object entity, EntityState state);
 

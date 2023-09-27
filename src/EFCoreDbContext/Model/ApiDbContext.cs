@@ -1,10 +1,13 @@
-namespace Test;
+using ExcelEFCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace Model;
 
 //Imagine this is not an InMemory List but an API to store collection in Database
 //Why it is needed, because EFCore DbContexts needs a Direct Conection with a Database via Connection String
 //And with this implementation, you can communicate with the Server API and give this class to the ContextHandler
 //to update the Excel Tables
-public class ApiDbContext : IDbContext
+public class ApiDbContext : IExcelDbContext
 {
     private List<(Person, EntityState)> PersonOperations { get; set; } = new List<(Person, EntityState)>();
     private List<(Book, EntityState)> BookOperations { get; set; } = new List<(Book, EntityState)>();
