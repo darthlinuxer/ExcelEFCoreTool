@@ -15,7 +15,7 @@ public partial class Excel : IDisposable
     public ContextHandler? ContextHandler { get => _contextHandler; private set { _contextHandler = value; } }
 
 
-    private Excel(string file, ContextHandler contextHandler, string minimumLevel = "Debug")
+    private Excel(string file, ContextHandler contextHandler, string minimumLevel = "Debug", Logger? logExternal = null)
     {
         LogEventLevel eventLevel = LogEventLevel.Debug;
         if (minimumLevel == "Verbose") eventLevel = LogEventLevel.Verbose;
@@ -39,7 +39,7 @@ public partial class Excel : IDisposable
         if (minimumLevel == "FTL") eventLevel = LogEventLevel.Fatal;
 
         levelSwitch.MinimumLevel = eventLevel;
-        log = loggerConfiguration
+        log = (logExternal is not null) ? logExternal : loggerConfiguration
               .Enrich.WithProperty("Version", toolVersion)
               .Enrich.FromLogContext()
               .MinimumLevel.ControlledBy(levelSwitch)
@@ -99,7 +99,7 @@ public partial class Excel : IDisposable
         GC.Collect();
     }
 
-    public static Excel? Create(string? file, IExcelDbContext dbContext, string eventLevel = "INF", int indexCellColNumber = 1)
+    public static Excel? Create(string? file, IExcelDbContext dbContext, string eventLevel = "INF", int indexCellColNumber = 1, Logger? externalog = null)
     {
         try
         {
@@ -110,7 +110,7 @@ public partial class Excel : IDisposable
                 Excel.Warning("File name: Default.xlsx");
                 file = "Default.xlsx";
             }
-            return new Excel(file, contextHandler, eventLevel);
+            return new Excel(file, contextHandler, eventLevel, externalog);
         }
         catch (Exception ex)
         {
@@ -118,6 +118,7 @@ public partial class Excel : IDisposable
             return null;
         }
     }
+
 
     public static void Debug(string msg, params object?[]? p)
     {
