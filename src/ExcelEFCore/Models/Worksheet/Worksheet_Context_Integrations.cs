@@ -71,6 +71,8 @@ public partial class Worksheet
             {
                 var element = GetElement(row);
                 elements.Add(element);
+                Excel.Info("{$a}:{b} exporting element key value={c}", this, MethodBase.GetCurrentMethod()?.Name, element.GetValue());
+                Excel.Debug("{$a}:{b} exporting element={@c}", this, MethodBase.GetCurrentMethod()?.Name, element);
             }
             ClearAllEvent?.Invoke(ContextDbSet);
             AddEvent?.Invoke(elements, ContextDbSet);
@@ -98,7 +100,8 @@ public partial class Worksheet
                 foreach (var contextElement in contextElements)
                 {
                     var element = Element.Factory(contextElement, KeyName, culture);
-                    Excel.Debug("{$a}:{b} element={@c}", this, MethodBase.GetCurrentMethod()?.Name, element.Item);
+                    Excel.Info("{$a}:{b} importing  from context element key value={c}", this, MethodBase.GetCurrentMethod()?.Name, element.GetValue());
+                    Excel.Debug("{$a}:{b} importing from context element={@c}", this, MethodBase.GetCurrentMethod()?.Name, element);
                     Append(element);
                 }
 

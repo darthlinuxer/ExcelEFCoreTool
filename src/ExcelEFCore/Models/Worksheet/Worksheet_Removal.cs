@@ -29,7 +29,7 @@ public partial class Worksheet
     {
         try
         {
-            Excel.Debug("{$a}:{b} {@d}", this, MethodBase.GetCurrentMethod()?.Name, element);
+            Excel.Debug("{$a}:{b} element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, element.GetValue());
             var (row, _) = Find(e => e.GetValue() == element.GetValue());
             if (row is not null) DeleteRow(row.Value);
         }

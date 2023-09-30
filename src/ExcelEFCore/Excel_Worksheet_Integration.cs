@@ -43,7 +43,8 @@ public partial class Excel
     {
         try
         {
-            Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
+            Excel.Info("{$a} {b} called!", this, MethodBase.GetCurrentMethod()?.Name);
+            Excel.Info("{$a} {b} Worksheets.Count():{c}!", this, MethodBase.GetCurrentMethod()?.Name, Worksheets.Count());
             foreach (var worksheet in Worksheets)
             {
                 Excel.Info("{$a} {b} Exporting context to worksheet {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet.Name);
@@ -61,8 +62,9 @@ public partial class Excel
     {
         try
         {
-            Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
+            Excel.Info("{$a} {b} called!", this, MethodBase.GetCurrentMethod()?.Name);
             var worksheet = Worksheets.FirstOrDefault(c => c.Name == name);
+            Excel.Info("{$a} {b} Worksheet: {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet?.Name);
             if (worksheet is null) return;
             Excel.Info("{$a} {b} Exporting context to worksheet {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet.Name);
             worksheet.ImportFromContext(this._contextHandler, culture);
@@ -78,7 +80,7 @@ public partial class Excel
     {
         try
         {
-            Excel.Info("{$a} {b}", this, MethodBase.GetCurrentMethod()?.Name);
+            Excel.Info("{$a} {b} called!", this, MethodBase.GetCurrentMethod()?.Name);
             foreach (var worksheet in Worksheets)
             {
                 Excel.Info("{$a} {b} Importing worksheet to context {c}", this, MethodBase.GetCurrentMethod()?.Name, worksheet.Name);

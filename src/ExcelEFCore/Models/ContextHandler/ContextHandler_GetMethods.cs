@@ -10,7 +10,7 @@ public partial class ContextHandler
         {
             Excel.Info("{$a}:{b} of {c}", this, MethodBase.GetCurrentMethod()?.Name, prop.Name);
             var value = prop.GetValue(obj);
-            Excel.Debug("{$a}:{b} Value={c}", this, MethodBase.GetCurrentMethod()?.Name, value);
+            Excel.Debug("{$a}:{b} of {c} has Value={c}", this, MethodBase.GetCurrentMethod()?.Name, prop.Name, value);
             return value;
         }
         catch (Exception ex)

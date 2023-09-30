@@ -8,7 +8,7 @@ public partial class Worksheet
         try
         {
             var row = GetEmptyRow();
-            Excel.Debug("{$a}:{b} row={c} {@d}", this, MethodBase.GetCurrentMethod()?.Name, row, element);
+            Excel.Debug("{$a}:{b} adding element:{c} key value:{d} to row {e}", this, MethodBase.GetCurrentMethod()?.Name, element.GetType().Name, element.GetValue(), row);
             WriteToRow(row, element);
         }
         catch (Exception ex)
@@ -20,7 +20,7 @@ public partial class Worksheet
     {
         try
         {
-            Excel.Debug("{$a}:{b} row={c} {@d}", this, MethodBase.GetCurrentMethod()?.Name, row, element);
+            Excel.Debug("{$a}:{b} adding element:{c} key value:{d} to row {e}", this, MethodBase.GetCurrentMethod()?.Name, element.GetType().Name, element.GetValue(), row);
             WriteToRow(row, element);
         }
         catch (Exception ex)
@@ -33,8 +33,8 @@ public partial class Worksheet
     {
         try
         {
-            Excel.Debug("{$a}:{b} {@d}", this, MethodBase.GetCurrentMethod()?.Name, element);
             var newRow = GetEmptyRow();
+            Excel.Debug("{$a}:{b} adding element:{c} key value:{d} to row {e}", this, MethodBase.GetCurrentMethod()?.Name, element.GetType().Name, element.GetValue(), newRow);
             Add(newRow, element);
         }
         catch (Exception ex)

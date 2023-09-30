@@ -28,7 +28,7 @@ public partial class Worksheet
     {
         try
         {
-            Excel.Info("{$a}:{b} row={c} {@d}", this, MethodBase.GetCurrentMethod()?.Name, row, element.Item);
+            Excel.Info("{$a}:{b} row={c} element key value:{d}", this, MethodBase.GetCurrentMethod()?.Name, row, element.GetValue());
             if (!ValidateHeaders(element)) return false;
             foreach (var header in HeaderProperties)
             {
@@ -74,7 +74,7 @@ public partial class Worksheet
                 var value = Cell.GetValue(RealWorksheet, row, col);
                 element.SetValue(value, property);
             }
-            Excel.Debug("{$a}:{b} {@c}", this, MethodBase.GetCurrentMethod()?.Name, element);
+            Excel.Debug("{$a}:{b} element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, element?.GetValue());
             return element;
         }
         catch (Exception ex)

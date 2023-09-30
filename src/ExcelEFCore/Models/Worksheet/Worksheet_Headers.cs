@@ -56,16 +56,16 @@ public partial class Worksheet
         var headers = new List<string>();
         try
         {
-            var hdrRange = this.RealWorksheet.Dimension.Columns;
+            var hdrRange = this.RealWorksheet?.Dimension?.Columns ?? 0;
             var col = 1;
             while (col <= hdrRange)
             {
-                var hdrValue = Cell.GetValue(RealWorksheet, 1, col) as string;
+                var hdrValue = Cell.GetValue(RealWorksheet!, 1, col) as string;
                 if (hdrValue is not null) headers.Add(hdrValue!);
                 col++;
             }
 
-            Excel.Debug("{$a}:{b} worksheet:{c} headers={@d}", this, MethodBase.GetCurrentMethod()?.Name, RealWorksheet.Name, headers);
+            Excel.Debug("{$a}:{b} worksheet:{c} headers={@d}", this, MethodBase.GetCurrentMethod()?.Name, RealWorksheet!.Name, headers);
             return headers;
         }
         catch (Exception ex)

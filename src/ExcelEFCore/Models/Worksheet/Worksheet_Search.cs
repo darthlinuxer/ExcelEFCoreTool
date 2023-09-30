@@ -17,7 +17,7 @@ public partial class Worksheet
                 if (result is true) break;
                 row++;
             }
-            Excel.Debug("{$a} {b} {@c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement);
+            Excel.Debug("{$a} {b} row element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement?.GetValue());
             if (rowElement is not null) return (row, rowElement);
             return (null, null);
         }
@@ -42,7 +42,7 @@ public partial class Worksheet
             T convertedRowElement = (rowElement.Item as T)!;
             elements.Add((rowElement.Item as T)!);
         }
-        Excel.Debug("{$a} {b} {@c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement);
+        Excel.Debug("{$a} {b} row element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement?.GetValue());
         return elements;
     }
 
@@ -61,7 +61,7 @@ public partial class Worksheet
                 if (result is true) break;
                 row++;
             }
-            Excel.Debug("{$a} {b} {@c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement);
+            Excel.Debug("{$a} {b} row element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, rowElement?.GetValue());
             if (rowElement is null) return false;
             var unMatchedProperties = CompareElements(rowElement, target, compareId);
             foreach (var unmatchedProperty in unMatchedProperties.Keys)

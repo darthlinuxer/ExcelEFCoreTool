@@ -1,0 +1,1 @@
+dotnet run --project src/ExcelEFCoreCli create default.xlsx --loglevel DBG

@@ -18,6 +18,7 @@ public partial class ContextHandler
             var contextElements = GetElements(dbSetProp.Name);
             contextElements.ToList().AddRange(elementsToAdd);
             elementsToAdd.ToList().ForEach(c => _context.EntryStatus(c, EntityState.Added));
+            Excel.Debug("{$a} {b} Added Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToAdd.Count());
 
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
@@ -39,6 +40,7 @@ public partial class ContextHandler
             var contextElements = GetElements(dbSetName);
             contextElements.ToList().AddRange(elementsToAdd);
             elementsToAdd.ToList().ForEach(c => _context.EntryStatus(c, EntityState.Added));
+            Excel.Debug("{$a} {b} Added Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToAdd.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -64,6 +66,7 @@ public partial class ContextHandler
                           if (matchedElement is not null) _context.EntryStatus(c, EntityState.Deleted);
                           return true;
                       });
+            Excel.Debug("{$a} {b} Removed Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToRemove.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -91,6 +94,7 @@ public partial class ContextHandler
                           if (matchedElement is not null) _context.EntryStatus(c, EntityState.Deleted);
                           return true;
                       });
+            Excel.Debug("{$a} {b} Removed Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToRemove.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -120,6 +124,7 @@ public partial class ContextHandler
                                _context.EntryStatus(c, EntityState.Modified);
                            }
                        });
+            Excel.Debug("{$a} {b} Updated Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToUpdate.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -150,6 +155,7 @@ public partial class ContextHandler
                                _context.EntryStatus(c, EntityState.Modified);
                            }
                        });
+            Excel.Debug("{$a} {b} Updated Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, elementsToUpdate.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -173,6 +179,7 @@ public partial class ContextHandler
                 _context.EntryStatus(c, EntityState.Deleted);
                 return true;
             });
+            Excel.Debug("{$a} {b} Cleared Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, contextElements?.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;
@@ -196,6 +203,7 @@ public partial class ContextHandler
                 _context.EntryStatus(c, EntityState.Deleted);
                 return true;
             });
+            Excel.Debug("{$a} {b} Cleared Elements:{c}", this, MethodBase.GetCurrentMethod()?.Name, contextElements?.Count());
             // var result = _context.SaveChanges() > 0;
             // Excel.Debug("{$a} {b} result={c}", this, MethodBase.GetCurrentMethod()?.Name, result);
             // return result;

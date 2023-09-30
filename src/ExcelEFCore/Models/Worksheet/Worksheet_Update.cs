@@ -6,9 +6,9 @@ public partial class Worksheet
     {
         try
         {
-            Excel.Info("{$a}:{b} {@d}", this, MethodBase.GetCurrentMethod()?.Name, element);
-            var (row, _) = Find(e => e.GetValue()!.Equals(element.GetValue()));
-            if (row is not null) WriteToRow(row.Value, element);
+            Excel.Debug("{$a} {b} element key value:{c}", this, MethodBase.GetCurrentMethod()?.Name, element?.GetValue());
+            var (row, _) = Find(e => e.GetValue()!.Equals(element!.GetValue()));
+            if (row is not null) WriteToRow(row.Value, element!);
         }
         catch (Exception ex)
         {

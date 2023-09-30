@@ -19,16 +19,23 @@ public partial class Excel : IDisposable
     {
         LogEventLevel eventLevel = LogEventLevel.Debug;
         if (minimumLevel == "Verbose") eventLevel = LogEventLevel.Verbose;
+        if (minimumLevel == "VERBOSE") eventLevel = LogEventLevel.Verbose;
         if (minimumLevel == "VRB") eventLevel = LogEventLevel.Verbose;
         if (minimumLevel == "Debug") eventLevel = LogEventLevel.Debug;
+        if (minimumLevel == "DEBUG") eventLevel = LogEventLevel.Debug;
         if (minimumLevel == "DBG") eventLevel = LogEventLevel.Debug;
         if (minimumLevel == "Information") eventLevel = LogEventLevel.Information;
         if (minimumLevel == "INF") eventLevel = LogEventLevel.Information;
+        if (minimumLevel == "Info") eventLevel = LogEventLevel.Information;
+        if (minimumLevel == "INFO") eventLevel = LogEventLevel.Information;
         if (minimumLevel == "Warning") eventLevel = LogEventLevel.Warning;
+        if (minimumLevel == "WARNING") eventLevel = LogEventLevel.Warning;
         if (minimumLevel == "WRG") eventLevel = LogEventLevel.Warning;
         if (minimumLevel == "Error") eventLevel = LogEventLevel.Error;
+        if (minimumLevel == "ERROR") eventLevel = LogEventLevel.Error;
         if (minimumLevel == "ERR") eventLevel = LogEventLevel.Error;
         if (minimumLevel == "Fatal") eventLevel = LogEventLevel.Fatal;
+        if (minimumLevel == "FATAL") eventLevel = LogEventLevel.Fatal;
         if (minimumLevel == "FTL") eventLevel = LogEventLevel.Fatal;
 
         levelSwitch.MinimumLevel = eventLevel;
@@ -92,7 +99,7 @@ public partial class Excel : IDisposable
         GC.Collect();
     }
 
-    public static Excel? Create(string? file, IExcelDbContext dbContext, string eventLevel = "Debug", int indexCellColNumber = 1)
+    public static Excel? Create(string? file, IExcelDbContext dbContext, string eventLevel = "INF", int indexCellColNumber = 1)
     {
         try
         {

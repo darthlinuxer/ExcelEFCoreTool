@@ -22,7 +22,7 @@ public class Person
     public string? Email { get; set; } = "";
 
     [DataType(DataType.DateTime)]
-    public DateTime? Date { get; set; }
+    public DateTime? Date { get; set; } = DateTime.Now;
 
     [DataType(DataType.PhoneNumber)]
     public int? Phone { get; set; }

@@ -10,12 +10,13 @@ public partial class Element
     {
         try
         {
-            Excel.Debug("{$a}:{b} {@c}", this, MethodBase.GetCurrentMethod()?.Name, item);
+            Excel.Info("{$a}:{b} constructor!", this, MethodBase.GetCurrentMethod()?.Name);
             Culture = culture ?? new CultureInfo("en-US");
             Item = item;
             Properties = GetProperties(item);
             var keyProp = Property(key);
             if (keyProp is null) throw new Exception("{key} is not a valid property!");
+            Excel.Debug("{$a}:{b} keyProp: {c}", this, MethodBase.GetCurrentMethod()?.Name, keyProp.Name);
             Key = keyProp;
         }
         catch (Exception ex)
